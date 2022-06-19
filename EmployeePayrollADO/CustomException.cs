@@ -4,10 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+<<<<<<< HEAD
 
 namespace EmployeePayrollADO
 
 { 
+=======
+namespace EmployeePayrollADO
+{
+>>>>>>> UC2-RetrieveFromDatabase
     public class CustomException : Exception
     {
         public enum ExceptionType
@@ -22,3 +27,7 @@ namespace EmployeePayrollADO
 
     }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> UC2-RetrieveFromDatabase

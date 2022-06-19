@@ -1,4 +1,5 @@
-﻿using DocumentFormat.OpenXml.Drawing.Diagrams;
+using DocumentFormat.OpenXml.Drawing.Diagrams;
+using EmployeePayrollADO.EmployeePayrollADO;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -61,7 +62,7 @@ namespace EmployeePayrollADO
                     employeeData.Salary = Convert.ToDouble(sqlDataReader["Salary"]);
                     employeeData.StartDate = Convert.ToDateTime(sqlDataReader["StartDate"]);
                     employeeData.Gender = Convert.ToChar(sqlDataReader["Gender"]);
-                    employeeData.PhoneNumber = (long)Convert.ToDouble(sqlDataReader["PhoneNumber"]);
+                    employeeData.PhoneNumber = Convert.ToDouble(sqlDataReader["PhoneNumber"]);
                     employeeData.Address = sqlDataReader["Address"].ToString();
                     employeeData.Department = sqlDataReader["Department"].ToString();
                     employeeData.Basic_Pay = Convert.ToDouble(sqlDataReader["BasicPay"]);
@@ -87,6 +88,25 @@ namespace EmployeePayrollADO
                 sqlDataReader.Close();
             }
             sqlConnection.Close();
+        }
+
+        public void UpdateSalary()
+        {
+            sqlConnection.Open();
+            string query = "update employee_payroll set BasicPay=3000000 where EmployeeName= 'Terrrisa'";
+
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+            int result = sqlCommand.ExecuteNonQuery();
+            if (result != 0)
+            {
+                Console.WriteLine("Updated");
+            }
+            else
+            {
+                Console.WriteLine("Not Updated");
+            }
+            sqlConnection.Close();
+            GetSqlData();
         }
     }
 }

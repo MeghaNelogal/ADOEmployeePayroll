@@ -13,7 +13,11 @@ namespace EmployeePayrollADO
         public double Salary { get; set; }
         public DateTime StartDate { get; set; }
         public char Gender { get; set; }
+<<<<<<< HEAD
         public Int64 PhoneNumber { get; set; }
+=======
+        public double PhoneNumber { get; set; }
+>>>>>>> UC2-RetrieveFromDatabase
         public string Address { get; set; }
         public string Department { get; set; }
         public double Basic_Pay { get; set; }
@@ -22,4 +26,8 @@ namespace EmployeePayrollADO
         public double Taxable_Pay { get; set; }
         public double Net_Pay { get; set; }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> UC2-RetrieveFromDatabase
